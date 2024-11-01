@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+
+main h1{
+    font-family: "Shantell Sans", cursive;
+    font-size: 40px;
+    text-align: center;
+    padding: 1em 0;
+    color: black;
+    font-weight: 500;
+}
+
+h1 span{
+    background-color: white;
+    padding: 0.5em;
+}
+
+.eventos,.emprendedor,.cultural{
+    background-color: rgb(202, 202, 202);
+    justify-content: center;
+}
+
+.separador{
+    background-color: #4bb3b3;
+    background-image: url("../img/icons.png");
+    width: 100%;
+    height: 100px;
+}
+
+section img{
+    width: 300px;
+    height: 250px;
+}
+
+.gallery{
+    text-align: center;
+    padding: 2em 0;
+}
+
+.polaroid-card{
+    display: inline-block;
+    margin: 32px;
+    padding: 10px;
+    background-color: white;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
+}
+
+.polaroid-card img{
+    object-fit: cover;
+}
+
+.polaroid-card figcaption{
+    margin-top: 6px;
+    letter-spacing: 2px;
+    font-family: "Shantell Sans", cursive;
+}
+
+.polaroid-card:nth-of-type(even){
+    transform: rotate(12deg);
+}
+
+.polaroid-card:nth-of-type(odd){
+    transform: rotate(-12deg);
+}
+
+.polaroid-card:nth-of-type(even)::before{
+    content: "";
+    display: block;
+    background-color: rgba(222, 220, 200, 0.66);
+    width: 100px;
+    height: 25px;
+    transform: translate(-30px, -25px) rotate(-24deg);
+}
+
+.polaroid-card:nth-of-type(odd)::before{
+    content: "";
+    display: block;
+    background-color: rgba(222, 220, 200, 0.86);
+    width: 100px;
+    height: 25px;
+    transform: translate(240px, -5px) rotate(25deg);
+}
+
+.polaroid-card:hover{
+    transform: scale(1.25);
+}
+
+@media screen  and (max-width:1000px){
+    main h1{
+        font-size: 25px;
+    }
+}

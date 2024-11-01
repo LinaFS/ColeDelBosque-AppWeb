@@ -1,0 +1,392 @@
+/*panel del admin*/
+
+.panelTitle{
+    text-align: center;
+    margin: 2.5em 0;
+}
+
+.panelTitle h1{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.panelTitle h2{
+    font-size: 20px;
+    color: #442ED0;
+    margin-top: 1em;
+}
+
+.panel{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.panel hr{
+    height:50px;    width:.1vw;
+    margin: 4em;
+    border-width:0;
+    color:#e4dfdf;
+    background-color:#e4dfdf;
+}
+
+.secciones{
+    width: 100px;
+    padding: .5em;
+    margin: 1.5em 0;
+    cursor: pointer;
+}
+
+.secciones img{
+    width: 80px;
+    margin-bottom: 1em;
+}
+
+.secciones:hover{
+    background-color: #efefef;
+}
+
+
+/*página panel alumno*/
+
+.alumni{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.filtrosAlumni{
+    display: flex;
+    background-color: #b7b2dd;
+    padding: 1em ;
+    border-radius: 10px;
+    gap: 1em;
+    text-align: center;
+}
+
+.materias,.grupo,.resp{
+    text-align: center;
+    margin: 0 3em;
+    cursor: pointer;
+    margin-bottom: 2em;
+}
+
+.materias img{
+    margin-top: .5em;
+    width: 50px;
+}
+
+.mat,.grup{
+    margin: .2em;
+}
+
+.mat input,.grup select{
+    height: 35px;
+    width: 200px;
+    font-size: 15px;
+    text-align: center;
+    margin: .5em 0;
+    border: none;
+    border-radius: 15px;
+}
+
+table .iconsT{
+    display: flex;
+    align-items: center;
+    background-color: white !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: justify;
+    gap: .5em;
+}
+
+.iconsT img{
+    width: 30px;
+    cursor: pointer;
+}
+
+.back{
+    display: flex;
+    text-align: center;
+    width: 15%;
+    margin: 2em 3em;
+    align-items: center;
+    cursor: pointer;
+}
+
+.back img{
+    width: 50px;
+    margin-right: .5em;
+}
+
+/*página finanzas*/
+
+.content{
+    height: 100vh;
+    display: none;
+}
+
+.content h1{
+    font-size: 30px;
+    text-align: center;
+    color: #442ED0;
+    margin-top: 2em;
+}
+
+.finanzas{
+    height: auto;
+}
+
+.finanzas h2{
+    text-align: center;
+    color: #442ED0;
+    font-size: 25px;
+    margin-top: 2em;
+}
+
+.contentf{
+    display: flex;
+    justify-content: center;
+    margin: 2em 0;
+}
+
+.contentf form{
+    background-color: lightblue;
+    border-radius: 15px;
+    box-shadow: #d7d3f4 5px 5px 5px;
+    padding: 2em 4.5em;
+}
+
+.contentf p{
+    color:#442ED0;
+    font-size: 15px;
+    margin: .5em 0 .2em 0;
+}
+
+.contentf input{
+    color: #442ED0;
+    width: 100%;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    padding:0 .5em;
+}
+
+.contentf button{
+    color: #442ED0;
+    width: 80%;
+    height: 45px;
+    margin: 1em 2.5em;
+    background-color: transparent;
+    border: #442ED0 2px solid;
+    cursor: pointer;
+}
+
+.contentf h3{
+    text-align: center;
+    cursor: pointer;
+    color: #1b00b1;
+    font-size: 10px;
+}
+
+.contentf h3:hover{
+    text-decoration: underline;
+}
+
+dialog{
+    border: 0;
+    border-radius: 15px;
+    width: 400px;
+    text-align: center;
+    z-index: 9999;
+}
+
+dialog button{
+    width: 100px;
+    margin: 2em 2em;
+    height: 40px;
+    width: 150px;
+    background-color: transparent;
+    border: #442ED0 2px solid;
+    color: #442ED0;
+}
+
+dialog::backdrop{
+    background-color: black;
+    opacity: 55%;
+}
+
+.mov{
+    height: auto;
+}
+
+.mov h1{
+    text-align: center;
+    margin-top: 2em;
+    color: #1b00b1;
+    font-size: 25px;
+}
+
+
+.filtros{
+    background-color: #b7b2dd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .2em 3em;
+    margin: 1em 0;
+    text-align: center;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+.filtro{
+    color: #1b00b1;
+    width: 150px;
+    align-items: center;
+}
+
+.filtro input, .filtro select{
+    width: 100%;
+    color: #1b00b1;
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    height: 25px;
+    margin: .2em 0;
+    padding-left: .5em;
+}
+
+.movContent{
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;     /* Centra verticalmente */
+    flex-direction: column;
+    height: auto;
+}
+
+.movContent h2{
+    color: #1b00b1;
+    text-align: center;
+    font-size: 20px;
+}
+
+.filtros button{
+    width: 100px;
+    color: #1b00b1;
+    background-color: transparent;
+    height: 30px;
+    border: 2px solid #1b00b1;
+    cursor: pointer;
+}
+
+.table-desktop{
+    margin-top: 1em;
+    border-collapse: collapse;
+}
+
+.table-desktop tr th{
+    background-color: #1b00b1;
+    color: white;
+    padding: .5em 0;
+    border: 2px solid white;
+    width: 200px;
+}
+
+.table-desktop tr td{
+    background-color: #b7b2dd;
+    padding: .5em 0;
+    text-align: center;
+    border: 2px solid white ;
+    word-wrap: break-word;
+    font-size: 15px;
+}
+
+.volver{
+    background-color: transparent;
+    color: #1b00b1;
+    border: 2px solid #1b00b1;
+    width: 200px;
+    height: 40px;
+    margin: 5em;
+    cursor: pointer;
+}
+
+.buttonback{
+    display: flex;
+    justify-content: center;
+}
+
+.buttonback button{
+    background-color: transparent;
+    color: #1b00b1;
+    border: 2px solid #1b00b1;
+    width: 200px;
+    height: 40px;
+    margin: 0 0 2em ;
+    cursor: pointer;
+}
+
+#modal button{
+    width: 140px;
+    margin-left: .5em;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.pagination button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    cursor: pointer;
+}
+
+.pagination button:hover {
+    background-color: #ddd;
+}
+
+.pagination button.active {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.pagination button[disabled] {
+    background-color: #f1f1f1;
+    color: #888;
+    cursor: not-allowed;
+}
+
+.añadir-Maestro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.añadir-Maestro img{
+    width: 50px;
+    cursor: pointer;
+}
+
+
+@media screen  and (max-width:1000px){
+    .panel hr{
+        display: none;
+    }
+
+    .panel{
+        padding: 0 5em;
+        margin-bottom: 2em;
+    }
+}

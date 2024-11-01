@@ -1,0 +1,304 @@
+/*página alumnos (form)*/
+
+.panelTitle{
+    text-align: center;
+    margin: 2.5em 0;
+}
+
+.panelTitle h1{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.panelTitle h2{
+    font-size: 20px;
+    color: #442ED0;
+    margin-top: 1em;
+}
+
+.alumni{
+    display: flex;
+    justify-content: center;
+}
+
+.alumniForm p{
+    margin: .5em 0;
+}
+
+.alumniForm{
+    background-color: #b7b2dd;
+    padding: 3em;
+    
+    box-shadow: #aea7da 5px 5px 5px;
+}
+
+.alumniForm input{
+    width: 90%;
+    height: 35px;
+    padding: 0 1em;
+    border: none;
+    border-radius: 5px;
+}
+
+.gradeSelect{
+    width: 98%;
+    height: 35px;
+    margin: 0;
+    padding: 0 1em;
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.alumniForm button{
+    color: #442ED0;
+    width: 80%;
+    height: 45px;
+    margin: 1em 2.5em;
+    background-color: transparent;
+    border: #442ED0 2px solid;
+    cursor: pointer;
+}
+
+.alumniForm h3{
+    text-align: center;
+    color: #1b00b1;
+    font-size: 12px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.back{
+    display: flex;
+    text-align: center;
+    width: 15%;
+    margin: 2em 3em;
+    align-items: center;
+    cursor: pointer;
+}
+
+.back img{
+    width: 50px;
+    margin-right: .5em;
+}
+
+
+/*panelgrup*/
+
+.contentGrup{
+    display: flex;
+    justify-content: center;
+    margin-top: 3em;
+    gap: 2em;
+    flex-wrap: wrap;
+}
+
+.add,.del,.mod{
+    margin-top: 1em;
+    width: 250px;
+    text-align: center;
+    height: 300px;
+    font-size: 20px;
+    padding-top: 2em;
+    cursor: pointer;
+    border-radius: 15px;
+    box-sizing: border-box;
+}
+
+.add img,.del img,.mod img{
+    width: 150px;
+    margin-top: 2em;
+}
+
+.add{
+    border: rgb(33, 185, 33) 2px solid;
+}
+
+.add:hover{
+    border: rgb(33, 185, 33) 3px solid;
+    box-shadow: rgb(201, 228, 176) 10px 10px 10px;
+}
+
+.add:active{
+    border: rgb(33, 185, 33) 2px solid;
+    box-shadow: none;
+}
+
+.mod{
+    border: rgb(229, 229, 21) 2px solid;
+}
+
+.mod:hover{
+    border: rgb(229, 229, 21) 3px solid;
+    box-shadow: rgb(233, 233, 164) 10px 10px 10px;
+}
+
+.mod:active{
+    border: rgb(229, 229, 21) 2px solid;
+    box-shadow: none;
+}
+
+.del{
+    border: red 2px solid;
+}
+
+.del:hover{
+    border: red 3px solid;
+    box-shadow: rgb(232, 179, 179) 10px 10px 10px;
+}
+
+.del:active{
+    border: red 2px solid;
+    box-shadow: none;
+}
+
+.view{
+    margin-top: 1em;
+    text-align: center;
+    color: #1b00b1;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.datos{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 1.5em;
+}
+
+.addGrup img{
+    width: 50px;
+    padding-top: 1em;
+    cursor: pointer;
+}
+
+.addGrup-content{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 2em;
+}
+
+.addGrup-content input,select{
+    height: 40px;
+    width: 200px;
+    border: none;
+    padding-left: 1em;
+    background-color: #e4dfdf;
+    border-radius: 15px;
+    margin-top: 1em;
+    flex-wrap: wrap;
+}
+
+.btn-grup{
+    margin-top: 2em;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-grup button{
+    width: 200px;
+    height: 45px;
+    background-color: transparent;
+    border: #1b00b1 2px solid;
+    color: #1b00b1;
+    cursor: pointer;
+}
+
+dialog{
+    border: 0;
+    border-radius: 15px;
+    width: 400px;
+    text-align: center;
+    z-index: 9999;
+}
+
+dialog button{
+    width: 100px;
+    margin: 2em 2em;
+    height: 40px;
+    width: 150px;
+    background-color: transparent;
+    border: #442ED0 2px solid;
+    color: #442ED0;
+}
+
+.content-form button{
+    width: fit-content;
+    margin: 0 1em;
+    background-color: transparent;
+    border: #442ED0 2px solid;
+    color: #442ED0;
+    cursor: pointer;
+}
+
+.content-noti{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2em;
+    display: none;
+    gap: 20px;
+}
+
+.notification{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    width: 50%;
+    height: auto;
+    background-color: #aea7da;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.notification span {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 5px 10px;
+    cursor: pointer;
+    font-size: 16px; /* Tamaño de fuente más pequeño */
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 50%;
+    width: 20px;  /* Ancho del círculo */
+    height: 20px; /* Altura del círculo */
+    display: flex; /* Para centrar el texto dentro del círculo */
+    align-items: center; /* Centrar verticalmente */
+    justify-content: center; /* Centrar horizontalmente */
+}
+
+.notification img{
+    margin-left: 2em;
+    width: 20px;
+    cursor: pointer;
+}
+
+@media screen and (max-width:500px) {
+    .add,.del,.mod{
+        width: 100px;
+        font-size: 15px;
+        height: 100px;
+        margin-top: 5px;
+        padding-top: 15px;
+    }
+
+    .add img, .del img, .mod img{
+        width: 50px;
+        margin-top: 5px;
+    }
+
+    .back{
+        font-size: 15px;
+    }
+
+    .contentGrup form{
+        padding: 0 6em;
+    }
+}
+
