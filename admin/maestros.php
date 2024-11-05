@@ -42,7 +42,7 @@
             <h2>Añadir un maestro</h2>
         </div>
         <div class="alumni">
-        <form class="alumniForm" action="../php/alumni_altas.php" method="post">
+        <form class="alumniForm" action="../php/maestros_altas.php" method="post">
                 <p>Nombre</p>
                 <input type="text" name="nombre" required>
                 <p>Apellido Paterno</p>

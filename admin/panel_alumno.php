@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/panel.css">
+    <script src="../js/alumnos.js"></script>
     <script src="../js/panel_admin.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <title>Alumnos - Colegio del bosque</title>
@@ -41,22 +42,22 @@
             <form class="filtrosAlumni">
                 <div class="mat">
                     <p>Filtrar por matrícula:</p>
-                    <input type="text" name="matricula">
+                    <input type="text" id="matricula" name="matricula">
                 </div>
                 <div class="mat">
                     <p>Filtrar por nombre:</p>
-                    <input type="text" name="nombre">
+                    <input type="text" id="nombre" name="nombre">
                 </div>
                 <div class="grup">
                     <p>Filtrar por grupo:</p>
-                    <select name="grupo">
-                        <option value="Sin seleccionar">Sin seleccionar</option>
-                        <option value="1">Primero</option>
-                        <option value="2">Segundo</option>
-                        <option value="3">Tercero</option>
-                        <option value="4">Cuarto</option>
-                        <option value="5">Quinto</option>
-                        <option value="6">Sexto</option>
+                    <select name="grupo" id="grupo">
+                        <option value="elegir">Sin seleccionar</option>
+                        <option value="Primero">Primero</option>
+                        <option value="Segundo">Segundo</option>
+                        <option value="Tercero">Tercero</option>
+                        <option value="Cuarto">Cuarto</option>
+                        <option value="Quinto">Quinto</option>
+                        <option value="Sexto">Sexto</option>
                     </select>
                 </div>
             </form>
@@ -75,10 +76,13 @@
                         <th>Grado</th>
                     </tr>
                 </thead>
-                <tbody id="contentA">
+                <tbody id="contentT">
                     
                 </tbody>
             </table>
+            <div id="pagina-table" class="pagination">
+                
+            </div>
         </div>
         <div class="back" onclick="backPanel()">
             <img src="../img/admin/regresar.png">

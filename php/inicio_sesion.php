@@ -1,9 +1,9 @@
 <?php
     session_start();
     include '../php/conexion.php';
+    include 'crypto.php';
     $matricula=$_POST["matricula"];
-    $matricula = hash("sha512",$matricula);
-
+    $matricula = encrypt($matricula);
     $consult="SELECT * FROM cuenta WHERE matricula='$matricula'";
     $validate_login = mysqli_query($conexion,$consult);
     if(mysqli_num_rows($validate_login)){

@@ -34,6 +34,36 @@ function addGrup(){
     window.location.href="../admin/añadir_grupos.php";
 }
 
+function modGrup(){
+    window.location.href="../admin/editar_grupos.php";
+}
+
+function enviarFormulario(id){
+    document.getElementById(id).submit();
+}
+
+// lógica para las pantallas de alerta
+
+function modal(id) {
+    event.preventDefault();
+
+    const aceptarBtn = document.getElementById('btnAceptar');
+    const closeBtn = document.getElementById('btnCancelar');
+    const modal = document.querySelector('#modal');
+
+    modal.showModal();
+
+    aceptarBtn.addEventListener('click', () => {
+        modal.close();
+        enviarFormulario(id);
+    });
+
+    closeBtn.addEventListener('click', () => {
+        modal.close();
+        catalogo();
+    });
+}
+
 function mostrarModal() {
     var urlParams = new URLSearchParams(window.location.search);
     var mensaje = urlParams.get('mensaje');
@@ -136,7 +166,3 @@ document.addEventListener("DOMContentLoaded", function (){
         }
     });
 });
-    
-
-
-

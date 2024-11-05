@@ -39,12 +39,12 @@
             <h1>Panel de control de grupo</h1>
             <h2>Administración de grupo</h2>
         </div>
-        <div class="contentGrup" onclick="addGrup()">
-            <div class="add">
+        <div class="contentGrup">
+            <div class="add" onclick="addGrup()">
                 <h2>Añadir</h2>
                 <img src="../img/admin/añadir.png">
             </div>
-            <div class="mod">
+            <div class="mod" onclick="modGrup()">
                 <h2>Modificar</h2>
                 <img src="../img/admin/editar.png">
             </div>

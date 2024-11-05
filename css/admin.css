@@ -160,13 +160,6 @@
     text-decoration: underline;
 }
 
-.datos{
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    gap: 1.5em;
-}
-
 .addGrup img{
     width: 50px;
     padding-top: 1em;
@@ -218,10 +211,10 @@ dialog button{
     width: 100px;
     margin: 2em 2em;
     height: 40px;
-    width: 150px;
     background-color: transparent;
     border: #442ED0 2px solid;
     color: #442ED0;
+    cursor: pointer;
 }
 
 .content-form button{

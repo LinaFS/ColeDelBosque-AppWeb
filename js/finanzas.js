@@ -52,8 +52,6 @@ function updatePaginationButtons(currentPage) {
     });
 }
 
-
-
 function enviarFormulario(id){
     document.getElementById(id).submit();
 }
