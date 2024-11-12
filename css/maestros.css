@@ -1,0 +1,41 @@
+.table-desktop2{
+    margin-top: 2em;
+    border-collapse: collapse;
+}
+
+.table-desktop2 tr th{
+    background-color: #1f982d;
+    color: white;
+    padding: .5em 0;
+    border: 2px solid white;
+    width: 200px;
+}
+
+.table-desktop2 tr td{
+    background-color: #b7b2dd;
+    padding: .5em;
+    text-align: center;
+    border: 2px solid white ;
+    word-wrap: break-word;
+    font-size: 15px;
+}
+
+.panelTitle2{
+    text-align: center;
+    margin: 2.5em 0;
+}
+
+.panelTitle2 h1{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.panelTitle2 h2{
+    font-size: 25px;
+    color: #442ED0;
+    margin-top: 1em;
+}
+
+.pagination{
+    margin-bottom: 3em;
+}

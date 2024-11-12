@@ -19,10 +19,17 @@
             $user = $nombre." ".$paterno;
             $_SESSION["usuario"] = $user;
             $_SESSION["permiso"] = $permiso;
+            $_SESSION["id"] = $user_id;
             if($permiso=="1"){
                 echo"
                     <script>
                         window.location='../paneldecontrol.php';
+                    </script>
+                ";
+            }else if($permiso=="2"){
+                echo"
+                    <script>
+                        window.location='../maestros/panel_profesor.php';
                     </script>
                 ";
             }

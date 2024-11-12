@@ -31,4 +31,18 @@
     $matricula=decrypt($matricula);
     echo $matricula;
 
+    echo "\n\n\n";
+    echo "\n\nComparativa: Encriptada con mi algoritmo:\n";
+    $matricula = "FPM090803";
+    $matricula= encrypt($matricula);
+    echo $matricula;
+    echo "\n\n";
+    echo "\n\n\n\nDesencriptando...\n\n\n";
+    $matricula=decrypt("$matricula");
+    echo $matricula;
+
+
+    
+
+
 ?>

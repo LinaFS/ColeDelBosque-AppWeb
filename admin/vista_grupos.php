@@ -1,10 +1,15 @@
 <?php
+    include '../php/conexion.php';
+    include '../php/crypto.php';
+
     session_start();
     if(isset($_SESSION["permiso"])!="1"){
         session_destroy();
         header("Location: ../index.html");
     }
     $user=$_SESSION["usuario"];
+    $sql = "SELECT * FROM grupo ORDER BY FIELD(grado, 'Primero', 'Segundo', 'Tercero', 'Cuarto', 'Quinto', 'Sexto')";;
+    $resultado = mysqli_query($conexion, $sql);
 ?>
 
 <!DOCTYPE html>
@@ -17,10 +22,10 @@
     <link rel="stylesheet" href="../css/panel.css">
     <link rel="stylesheet" href="../css/admin.css">
     <link rel="stylesheet" href="../css/grupos.css">
-    <script src="../js/panel_admin.js"></script>
+    <script src="../js/vista_grupos.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="icon" href="../img/logo.png">
-    <title> Administración de grupo - Colegio del bosque</title>
+    <title> Vista de grupos - Colegio del bosque</title>
 </head>
 <body>
     <dialog id="warning">
@@ -38,22 +43,25 @@
     </header>
     <main>
         <div class="panelTitle">
-            <h2>Administración de grupo</h2>
+            <h2>Vista de grupos</h2>
         </div>
         <div class="datos">
             <div class="datosSelect">
                 <p>Grupo</p>
                 <select name="grupo" id="grupo">
-                    <option value="Primero">Primero</option>
-                    <option value="Segundo">Segundo</option>
-                    <option value="Tercero">Tercero</option>
-                    <option value="Cuarto">Cuarto</option>
-                    <option value="Quinto">Quinto</option>
-                    <option value="Sexto">Sexto</option>
+                    <?php if (mysqli_num_rows($resultado) > 0): ?>
+                        <?php while ($row = mysqli_fetch_assoc($resultado)): ?>
+                            <option value="<?php echo $row['id_grupo']; ?>">
+                                <?php echo htmlspecialchars($row['grado']); ?>
+                            </option>
+                        <?php endwhile; ?>
+                    <?php else: ?>
+                        <option value="no">No disponibles</option>
+                    <?php endif; ?>
                 </select>
             </div>
             <p>Responsable:</p>
-            <p>Sin asignar</p>
+            <input type="text" class="asignado" id="asignado" disabled>
         </div>
         <div class="content-viewGrup">
             <div class="movContentViewGrup">
@@ -65,11 +73,12 @@
                         </tr>
                     </thead>
                     <tbody id="contentA">
-                        <tr>
-                            <td>No hay alumnos</td>
-                        </tr>
+                        
                     </tbody>
                 </table>
+                <div id="pagina-table" class="pagination">
+                
+                </div>
             </div>
             <div class="movContentViewGrup">
                 <h2>Materias registradas</h2>
@@ -80,11 +89,12 @@
                         </tr>
                     </thead>
                     <tbody id="contentM">
-                        <tr>
-                            <td>No hay materias</td>
-                        </tr>
+                        
                     </tbody>
                 </table>
+                <div id="pagina-table2" class="pagination">
+                
+                </div>
             </div>
         </div>
         <div class="back" onclick="grupos()">

@@ -38,6 +38,10 @@ function modGrup(){
     window.location.href="../admin/editar_grupos.php";
 }
 
+function delGrup(){
+    window.location.href="../admin/delete_grupos.php";
+}
+
 function enviarFormulario(id){
     document.getElementById(id).submit();
 }
@@ -101,7 +105,7 @@ function sendData() {
         method: 'POST',
         body: formData
     })
-    .then(response => response.json()) // Esperar respuesta JSON
+    .then(response => response.json())
     .then(data => {
         // Aquí puedes manejar la respuesta del servidor
         document.getElementById('mensaje').innerText = data.message; // Muestra el mensaje en el diálogo

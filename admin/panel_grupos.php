@@ -48,7 +48,7 @@
                 <h2>Modificar</h2>
                 <img src="../img/admin/editar.png">
             </div>
-            <div class="del">
+            <div class="del" onclick="delGrup()">
                 <h2>Eliminar</h2>
                 <img src="../img/admin/eliminar.png">
             </div>

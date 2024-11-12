@@ -24,11 +24,11 @@ if($resultado){
         $resultado = mysqli_query($conexion,$sql);
         if($resultado){
             $mensaje=urldecode("Se ha actualizado la información");
-            header("Location: ../admin/panel_alumno.php?mensaje=$mensaje&modal=true");
+            header("Location: ../admin/panel_maestros.php?mensaje=$mensaje&modal=true");
             exit;
         }else{
             $mensaje=urldecode("No se ha actualizado la cuenta");
-            header("Location: ../admin/panel_alumno.php?mensaje=$mensaje&modal=true");
+            header("Location: ../admin/panel_maestros.php?mensaje=$mensaje&modal=true");
             exit;
         }
     }else{
@@ -36,17 +36,17 @@ if($resultado){
         $resultado = mysqli_query($conexion,$sql);
         if($resultado){
             $mensaje=urldecode("Se ha actualizado la información");
-            header("Location: ../admin/panel_alumno.php?mensaje=$mensaje&modal=true");
+            header("Location: ../admin/panel_maestros.php?mensaje=$mensaje&modal=true");
             exit;
         }else{
             $mensaje=urldecode("No se ha actualizado la cuenta");
-            header("Location: ../admin/panel_alumno.php?mensaje=$mensaje&modal=true");
+            header("Location: ../admin/panel_maestros.php?mensaje=$mensaje&modal=true");
             exit;
         }
     }
 }else{
     $mensaje=urldecode("No se ha actualizado el usuario");
-        header("Location: ../admin/panel_alumno.php?mensaje=$mensaje&modal=true");
+        header("Location: ../admin/panel_maestros.php?mensaje=$mensaje&modal=true");
         exit;
 }
 

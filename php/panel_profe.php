@@ -1,14 +1,13 @@
 <?php
-include 'conexion.php';
-include 'crypto.php';
+session_start();
 
-$limit = 10;
+include "../php/conexion.php";
+include "../php/crypto.php";
+$limit = 5;
 $page = isset($_POST['page']) ? (int)$_POST['page'] : 1;
 $offset = ($page - 1) * $limit;
-
 $matricula = isset($_POST['matricula']) ? mysqli_real_escape_string($conexion, $_POST['matricula']) : null;
 $nombre = isset($_POST['nombre']) ? mysqli_real_escape_string($conexion, $_POST['nombre']) : null;
-$grupo = isset($_POST['grupo']) ? mysqli_real_escape_string($conexion, $_POST['grupo']) : null;
 
 $where = [];
 
@@ -28,17 +27,15 @@ if (!empty($matricula)) {
     $encryptedMatricula = encrypt($matricula);  // Encriptar la matrícula para la búsqueda
     $where[] = "cuenta.matricula = '$encryptedMatricula'";
 }
-
-// Condición para el campo grupo (grado)
-if ($grupo != "elegir") {
-    $where[] = "grupo.grado LIKE '%$grupo%' COLLATE utf8mb4_general_ci";
+$user_id = $_SESSION["id"];
+$sql = "SELECT grupo_id FROM cuenta WHERE usuario_id=$user_id";
+$result= mysqli_query($conexion,$sql);
+if(mysqli_num_rows($result)>0){
+    $row = mysqli_fetch_assoc($result);
+    $grupo_id=$row["grupo_id"];
 }
-
-$where[] = "cuenta.permiso_id = 3";
-
-
+$where[] = "cuenta.permiso_id = 3 AND grupo.id_grupo=$grupo_id";
 $whereSql = $where ? 'WHERE ' . implode(' AND ', $where) : '';
-
 // Obtener el total de registros
 $countSql = "SELECT COUNT(*) AS total
              FROM cuenta 
@@ -49,15 +46,19 @@ $countSql = "SELECT COUNT(*) AS total
 $countResult = mysqli_query($conexion, $countSql);
 $totalRecords = mysqli_fetch_assoc($countResult)['total'];
 $totalPages = ceil($totalRecords / $limit);
-
-// Obtener los registros
-$sql = "SELECT cuenta.id_cuenta, cuenta.matricula, usuario.nombre, usuario.paterno, usuario.materno, 
-               COALESCE(grupo.grado, 'No asignado') AS grado
-        FROM cuenta 
-        LEFT JOIN usuario ON cuenta.usuario_id = usuario.id_usuario
-        LEFT JOIN grupo ON cuenta.grupo_id = grupo.id_grupo
-        $whereSql
-        LIMIT $limit OFFSET $offset";
+$sql = "
+    SELECT 
+        cuenta.id_cuenta AS id_cuenta,
+        cuenta.matricula AS matricula,
+        usuario.nombre AS nombre,
+        usuario.paterno AS paterno,
+        usuario.materno AS materno
+    FROM cuenta 
+    LEFT JOIN usuario ON cuenta.usuario_id = usuario.id_usuario
+    LEFT JOIN grupo ON cuenta.grupo_id = grupo.id_grupo
+    $whereSql
+    LIMIT $limit OFFSET $offset
+";
 
 $resultado = mysqli_query($conexion, $sql);
 
@@ -70,13 +71,12 @@ if (mysqli_num_rows($resultado) > 0) {
         $tabla .= '<tr>';
         $tabla .= '<td>' . htmlspecialchars($matriculaDesencriptada) . '</td>';
         $tabla .= '<td>' . htmlspecialchars($nombreCompleto) . '</td>';
-        $tabla .= '<td>' . htmlspecialchars($row['grado']) . '</td>';
-        $tabla .= '<td class="iconsT"><a href="../admin/edit_alumnos.php?id=' . urlencode($row['id_cuenta']) . '"><img src="../img/admin/editar.png"></a><a href="../admin/delete_alumnos.php?id=' . urlencode($row['id_cuenta']) . '"><img src="../img/admin/eliminar.png"></a></td>';
+        $tabla .= '<td class="iconsT"><a href="../maestros/edit_alumni_datos.php?id=' . urlencode($row['id_cuenta']) . '"><img src="../img/admin/editar.png"></a></td>';
         $tabla .= '</tr>';
     }
 } else {
     $tabla .= '<tr>';
-    $tabla .= '<td colspan="3">Sin resultados</td>';
+    $tabla .= '<td colspan="2">Sin resultados</td>';
     $tabla .= '</tr>';
 }
 
@@ -109,4 +109,4 @@ $response = array(
 );
 
 echo json_encode($response);
-?>
+exit;

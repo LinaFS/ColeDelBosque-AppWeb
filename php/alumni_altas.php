@@ -47,6 +47,16 @@ if(empty($materno)){
 $pattern = "/^([A-Z]{3})([0-9]{6})$/";
 if(preg_match($pattern,$matricula)){
     $matricula = encrypt($matricula);
+    $sql_check = "SELECT COUNT(*) as count FROM cuenta WHERE matricula = '$matricula'";
+    $resultado_check = mysqli_query($conexion, $sql_check);
+    $row = mysqli_fetch_assoc($resultado_check);
+
+    if ($row['count'] > 0) {
+        $mensaje = urlencode("Error: La matrícula ya existe.");
+        header("Location: ../admin/alumnos.php?mensaje=$mensaje&modal=true");
+        exit;
+    }
+
     $sql = "INSERT INTO usuario (nombre, paterno, materno) VALUES ('$nombre','$paterno','$materno')";
     $resultado = mysqli_query($conexion, $sql);
     $id = mysqli_insert_id($conexion);
@@ -65,7 +75,7 @@ if(preg_match($pattern,$matricula)){
         }
     }
 }else{
-    $mensaje=$mensaje = urlencode("Error de registro, la matricula debe contener 3 mayúsculas y 6 números");
+    $mensaje = urlencode("Error de registro, la matricula debe contener 3 mayúsculas y 6 números");
     header("Location: ../admin/alumnos.php?mensaje=$mensaje&modal=true");
     exit;
 }

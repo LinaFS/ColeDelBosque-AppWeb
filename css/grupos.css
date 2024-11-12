@@ -20,6 +20,10 @@
     flex-wrap: wrap;
 }
 
+.grupoSelect{
+    text-align: center;
+}
+
 .editable-form p{
     text-align: center;
 }
@@ -49,9 +53,59 @@
     cursor: pointer;
 }
 
-.table-classes p{
+.newGrup-Data{
+    background-color: rgba(124, 174, 246, 0.5);
+    border-radius: 15px;
+    padding: 1em;
+}
+
+.newGrup{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    margin-top: 1em;
+}
+
+.newGrup-Data h2{
+    font-size: 18px;
+    color: #1b00b1;
+}
+
+.addGrup-content{
+    align-items: center;
+    justify-content: center;
+}
+
+.content-form{
+    text-align: center;
+    margin: 1em 0;
+}
+
+.content-form select{
+    text-align: center;
+}
+
+.datosSelect select{
+    text-align: center;
+}
+
+.content-form input, .asignado{
+    height: 40px;
+    width: 200px;
+    border: none;
+    padding-left: 1em;
+    background-color: #e4dfdf;
+    border-radius: 15px;
+    margin-top: 1em;
+    margin-bottom: .5em;
+    text-align: center;
+}
+
+.table-classes h2{
     text-align: center;
     margin-bottom: 1em;
+    font-size: 20px;
+    color: #1b00b1;
 }
 
 .table-classes table{
@@ -65,6 +119,15 @@
     padding: 10px 15px;
     border: white 3px solid;
     width: 500px;
+}
+
+.idTd{
+    width: 80px;
+    min-width: 80px;
+    max-width: 80px;
+    text-align: center;
+    overflow: hidden;
+    word-wrap: break-word;
 }
 
 .table-classes thead {
@@ -125,4 +188,42 @@
 
 .table-desktop tr th{
     width: 300px;
+}
+
+.table-wrapper {
+    margin-bottom: 1em; /* Espacio entre tablas */
+}
+
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.pagination button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    padding: 5px;
+    border-top: 1px solid #ccc;
+}
+
+.pagination button:hover {
+    background-color: #ddd;
+}
+
+.pagination button.active {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.pagination button[disabled] {
+    background-color: #f1f1f1;
+    color: #888;
+    cursor: not-allowed;
 }
