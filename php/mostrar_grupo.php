@@ -26,7 +26,8 @@ $totalPages2 = ceil($totalRecords2 / $limit);
 
 $sql_maestra = "SELECT 
                         usuario.nombre AS nombre, 
-                        usuario.paterno AS paterno, 
+                        usuario.paterno AS paterno,
+                        usuario.materno AS materno, 
                         cuenta.id_cuenta AS id_cuenta
                     FROM cuenta
                     LEFT JOIN usuario ON cuenta.usuario_id = usuario.id_usuario
