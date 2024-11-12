@@ -16,16 +16,16 @@ if(mysqli_num_rows($resultado)>0){
         $resultado = mysqli_query($conexion,$sql);
         if($resultado){
             $mensaje=urldecode("Se ha eliminado el registro");
-            header("Location: ../admin/panel_alumno.php?mensaje=$mensaje&modal=true");
+            header("Location: ../admin/panel_maestros.php?mensaje=$mensaje&modal=true");
             exit;
         }
     }else{
         $mensaje=urldecode("No se ha podido eliminar el registro");
-        header("Location: ../admin/panel_alumno.php?mensaje=$mensaje&modal=true");
+        header("Location: ../admin/panel_maestros.php?mensaje=$mensaje&modal=true");
         exit;
     }
 }else{
     $mensaje=urldecode("Advertencia, no se obtuvo el id de usuario (usuario_id)");
-        header("Location: ../admin/panel_alumno.php?mensaje=$mensaje&modal=true");
+        header("Location: ../admin/panel_maestros.php?mensaje=$mensaje&modal=true");
         exit;
 }
