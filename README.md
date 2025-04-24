@@ -1,7 +1,3 @@
-Perfecto, aquí tienes una versión extendida y mejorada del README con secciones adicionales:
-
----
-
 # Website: School Management System – Colegio del Bosque
 
 ## Overview
